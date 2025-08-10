@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+sentence-transformers
+pytest
+pytest-cov
+httpx
+python-multipart
+# faiss-cpu
+numpy
+pymongo
