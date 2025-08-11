@@ -3,6 +3,8 @@ from pymongo import MongoClient, ASCENDING
 import numpy as np
 from ..core import config
 
+MIN_SCORE: float = 0.75
+
 
 class MongoVectorStoreService:
     def __init__(self, namespace: str):
@@ -72,6 +74,10 @@ class MongoVectorStoreService:
 
         for doc in documents:
             score = float(doc.get("score", 0.0))
+
+            if score < float(MIN_SCORE):
+                continue
+
             metadata = {
                 "text": doc.get("text", ""),
                 "source": doc.get("source", ""),

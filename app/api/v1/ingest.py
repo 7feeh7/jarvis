@@ -55,11 +55,8 @@ async def ingest_txt(
 
     metas = build_metadatas(chunks, source=filename)
 
-    vector_store = MongoVectorStoreService(namespace)
-    vector_store.add(embeddings, metas)
+    MongoVectorStoreService(namespace).add(embeddings, metas)
 
     return {
-        "namespace": namespace,
-        "chunks": len(chunks),
-        "vectors": len(chunks)
+        "message": f"Ingestão concluída com sucesso.",
     }
