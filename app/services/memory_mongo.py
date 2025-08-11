@@ -5,11 +5,6 @@ from ..core import config
 
 
 class MemoryStore:
-    """
-    Memória de conversas no MongoDB.
-    Campos: namespace, conversation_id, role ('user'|'assistant'), content, ts
-    """
-
     def __init__(self, namespace: str):
         self.namespace = namespace
         self.client = MongoClient(config.MONGO_URI)
@@ -41,7 +36,6 @@ class MemoryStore:
             {"_id": 0, "role": 1, "content": 1}
         ).sort("ts", -1).limit(limit)
         rows = list(cursor)
-        # retorna na ordem cronológica (antigo → novo)
         return [(r["role"], r["content"]) for r in reversed(rows)]
 
     def _now_iso(self) -> str:
