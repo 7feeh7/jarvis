@@ -37,9 +37,23 @@ Antes de começar, configure:
 - Conta no MongoDB Atlas com Vector Search habilitado
 - Chave de API de um provedor de LLM (ex.: OpenAI)
 
-## Instalação
+## Instalação e Execução
 > OBS: E NECESSARIO CONFIGURAR O ARQUIVO .ENV
 
+### Instalação rápida (com Docker)
+1. Clonar o repositório:
+
+   ```bash
+   git clone https://github.com/7feeh7/jarvis.git
+   ```
+
+2. Subindo o projeto com Docker:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+### Instalação local (sem Docker)
 1. Clonar o repositório:
 
    ```bash
@@ -67,7 +81,7 @@ Antes de começar, configure:
    uvicorn app.main:app --reload
    ```
 5. Agora deve estar em execução:
-- API: http://localhost:8080
+- API: http://127.0.0.1:8000
 - Swagger: http://127.0.0.1:8000/docs
 - ReDoc: http://127.0.0.1:8000/redoc
 
