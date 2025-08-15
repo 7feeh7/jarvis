@@ -8,7 +8,6 @@ Este projeto implementa um **sistema RAG (Retrieval-Augmented Generation)** usan
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [MongoDB Atlas Vector Search](https://www.mongodb.com/products/platform/atlas-vector-search)
 - [OpenAI API](https://platform.openai.com/)
-- [Apache Kafka](https://kafka.apache.org/)
 - [Uvicorn](https://www.uvicorn.org/)
 
 ## Arquitetura
@@ -84,6 +83,13 @@ Antes de começar, configure:
 - API: http://127.0.0.1:8000
 - Swagger: http://127.0.0.1:8000/docs
 - ReDoc: http://127.0.0.1:8000/redoc
+
+## Comandos úteis
+
+  **Parar o serviço**:
+  ```bash
+  docker-compose down
+  ```
 
 ## Documentação
 
